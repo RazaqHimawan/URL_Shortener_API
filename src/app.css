@@ -1,0 +1,31 @@
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-size-body: 18px;
+
+  --color-primary-cyan: hsl(180, 66%, 49%);
+  --color-primary-dark-violet: hsl(257, 27%, 26%);
+
+  --color-secondary: hsl(0, 87%, 67%);
+
+  --color-neutral-gray: hsl(0, 0%, 90%);
+  --color-neutral-grayish-violet: hsl(258, 7%, 63%);
+  --color-neutral-very-dark-blue: hsl(255, 11%, 22%);
+  --color-neutral-very-dark-violet: hsl(260, 8%, 14%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+}
