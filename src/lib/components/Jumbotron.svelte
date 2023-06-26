@@ -30,7 +30,7 @@ div {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--color-neutral-very-dark-blue);
 }
 
