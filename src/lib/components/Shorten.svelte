@@ -30,8 +30,8 @@ form {
   flex-direction: column;
   padding: 1.5rem;
 
-  background: url(images/bg-shorten-mobile.svg) var(--color-primary-dark-violet)
-    no-repeat top right;
+  background: url(/images/bg-shorten-mobile.svg)
+    var(--color-primary-dark-violet) no-repeat top right;
   background-size: 290px 150px;
 }
 
@@ -64,7 +64,7 @@ button:focus {
 
 @media (min-width: 1000px) {
   form {
-    background-image: url(images/bg-shorten-desktop.svg);
+    background-image: url(/images/bg-shorten-desktop.svg);
     background-size: 100% 100%;
   }
 }

@@ -58,7 +58,7 @@
 
 <style>
 .top-footer {
-  background: url(images/bg-boost-mobile.svg) no-repeat
+  background: url(/images/bg-boost-mobile.svg) no-repeat
     var(--color-primary-dark-violet);
   background-position: right;
   background-size: 100% 100%;
@@ -132,7 +132,7 @@ a:focus {
 
 @media (min-width: 1000px) {
   .top-footer {
-    background-image: url(images/bg-boost-desktop.svg);
+    background-image: url(/images/bg-boost-desktop.svg);
   }
 
   .bottom-footer {
