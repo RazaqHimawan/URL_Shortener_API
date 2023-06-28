@@ -1,23 +1,28 @@
-<script>
+<script lang="ts">
 import Card from './Card.svelte';
+export let image: string;
+export let title: string;
+export let desc: string;
 </script>
 
 <div class="item">
   <div class="icon">
     <img
-      src="images/icon-brand-recognition.svg"
+      src={image}
       alt=""
     />
   </div>
 
   <div class="contents">
     <Card>
-      <h3>Brand Recognition</h3>
-      <p
-        >Boost your brand recognition with each click. Generic links don't mean
-        a thing. Branded links help instil confidence in your content.</p
-      >
+      <h3>{title}</h3>
+      <p>{desc}</p>
     </Card>
+  </div>
+
+  <div class="contents-dt">
+    <h3>{title}</h3>
+    <p>{desc}</p>
   </div>
 </div>
 
@@ -49,6 +54,10 @@ import Card from './Card.svelte';
   margin-top: 6rem;
 }
 
+.contents-dt {
+  display: none;
+}
+
 h3 {
   margin-top: 5rem;
   color: var(--color-neutral-very-dark-blue);
@@ -59,5 +68,27 @@ p {
   margin-bottom: 3rem;
   color: var(--color-neutral-grayish-violet);
   line-height: 1.8;
+}
+
+@media (min-width: 1000px) {
+  .item {
+    width: 350px;
+    height: 400px;
+  }
+
+  .icon {
+    left: 6rem;
+  }
+
+  .contents {
+    display: none;
+  }
+
+  .contents-dt {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0.5rem 3rem;
+  }
 }
 </style>

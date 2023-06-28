@@ -1,7 +1,7 @@
 <div class="top-footer">
   <div class="top-footer-content">
     <h2>Boost your links today</h2>
-    <button>Get Started</button>
+    <a href="#shorten">Get Started</a>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
 
   <div class="bottom-footer-content">
     <h4>Features</h4>
-    <a href="/">Link Shortening</a>
+    <a href="#shorten">Link Shortening</a>
     <a href="/">Branded Links</a>
     <a href="/">Analytics</a>
   </div>
@@ -29,28 +29,28 @@
     <a href="/">Contact</a>
   </div>
   <div class="socials">
-    <a href="/">
+    <a href="https://www.facebook.com/stfus/">
       <img
         src="images/icon-facebook.svg"
-        alt=""
+        alt="facebook"
       />
     </a>
     <a href="/">
       <img
         src="images/icon-twitter.svg"
-        alt=""
+        alt="twitter"
       />
     </a>
     <a href="/">
       <img
         src="images/icon-pinterest.svg"
-        alt=""
+        alt="pinterest"
       />
     </a>
     <a href="/">
       <img
         src="images/icon-instagram.svg"
-        alt=""
+        alt="instagram"
       />
     </a>
   </div>
@@ -75,8 +75,9 @@ h2 {
   color: var(--color-neutral-gray);
   font-size: 2rem;
 }
-button {
+.top-footer-content > a {
   cursor: pointer;
+  display: inline-block;
   padding: 1rem 3rem;
   margin-block: 1.2rem;
   border: none;
@@ -127,5 +128,24 @@ a {
 a:hover,
 a:focus {
   color: var(--color-neutral-gray);
+}
+
+@media (min-width: 1000px) {
+  .top-footer {
+    background-image: url(images/bg-boost-desktop.svg);
+  }
+
+  .bottom-footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .bottom-footer-content {
+    margin-top: 0;
+  }
+
+  .socials {
+    margin: 1.2rem;
+  }
 }
 </style>

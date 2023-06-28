@@ -7,13 +7,36 @@ let isOpen = false;
 <svelte:window on:click={() => (isOpen = false)} />
 
 <div class="nav">
-  <a href="/">
-    <img
-      src="images/logo.svg"
-      alt="Shortly"
-    />
-  </a>
-  <button on:click|stopPropagation={() => (isOpen = !isOpen)}>
+  <div class="wrapper">
+    <a href="/">
+      <img
+        src="images/logo.svg"
+        alt="Shortly"
+      />
+    </a>
+
+    <div class="nav-dt">
+      <ul>
+        <li>
+          <a href="#features">Features</a>
+        </li>
+        <li>
+          <a href="#pricing">Pricing</a>
+        </li>
+        <li>
+          <a href="#resources">Resources</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="cta">
+    <a href="#login">Login</a>
+    <button class="sign">Sign Up</button>
+  </div>
+  <button
+    id="hamburger"
+    on:click|stopPropagation={() => (isOpen = !isOpen)}
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
@@ -34,12 +57,12 @@ let isOpen = false;
     <Card>
       <div class="nav-mobile">
         <div class="nav-mobile-content">
-          <a href="/">Features</a>
-          <a href="/">Pricing</a>
-          <a href="/">Resources</a>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources">Resources</a>
           <div class="divider" />
-          <a href="/">Login</a>
-          <button class="sign">Sign Up</button>
+          <a href="#login">Login</a>
+          <button class="sign-mobile">Sign Up</button>
         </div>
       </div>
     </Card>
@@ -64,7 +87,6 @@ let isOpen = false;
 }
 
 .nav-mobile-content > a {
-  text-decoration: none;
   color: var(--color-neutral-gray);
   font-weight: 700;
   padding: 1rem;
@@ -82,7 +104,7 @@ let isOpen = false;
   margin-block: 1rem;
 }
 
-.sign {
+.sign-mobile {
   padding: 1rem 2.5rem;
   background-color: var(--color-primary-cyan);
   border-radius: 2rem;
@@ -110,5 +132,65 @@ svg {
   width: 48px;
   height: 48px;
   fill: var(--color-neutral-grayish-violet);
+}
+
+.nav-dt {
+  display: none;
+}
+
+.cta {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-neutral-grayish-violet);
+  font-weight: 700;
+}
+
+@media (min-width: 1000px) {
+  .nav {
+    margin-inline: 5rem;
+    justify-content: space-between;
+  }
+  #hamburger {
+    display: none;
+  }
+
+  .wrapper {
+    display: flex;
+  }
+
+  .nav-dt {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  li {
+    display: flex;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+  }
+  .cta > a {
+    margin-right: 2rem;
+  }
+
+  .cta > button {
+    padding: 0.5rem 2rem;
+    background-color: var(--color-primary-cyan);
+    border-radius: 2rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: var(--font-size-body);
+  }
 }
 </style>

@@ -8,4 +8,10 @@ div {
   margin-inline: 2rem;
   overflow: hidden;
 }
+
+@media (min-width: 1000px) {
+  div {
+    margin-inline: 6rem;
+  }
+}
 </style>

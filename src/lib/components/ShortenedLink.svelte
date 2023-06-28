@@ -1,5 +1,22 @@
-<script>
+<script lang="ts">
+import { afterUpdate } from 'svelte';
 import Card from './Card.svelte';
+
+export let value: string;
+export let result: string;
+
+let resultEl: HTMLInputElement;
+let copied = false;
+
+async function copyToClipboard(link: string) {
+  await navigator.clipboard.writeText(link);
+  copied = true;
+  afterUpdate(() => {
+    setTimeout(() => {
+      copied = false;
+    }, 2000);
+  });
+}
 </script>
 
 <div class="container">
@@ -7,11 +24,24 @@ import Card from './Card.svelte';
     <div class="contents">
       <input
         type="text"
-        value="https://www.frontendmentor.io"
+        {value}
         readonly
       />
-      <a href="/">https://rel.ink/l4KLyc</a>
-      <button>Copy</button>
+      <input
+        bind:this={resultEl}
+        class="result"
+        type="text"
+        value={result}
+        readonly
+      />
+      {#if copied}
+        <button
+          class="disabled"
+          disabled>Copied!</button
+        >
+      {:else}
+        <button on:click={() => copyToClipboard(result)}>Copy</button>
+      {/if}
     </div>
   </Card>
 </div>
@@ -28,8 +58,9 @@ import Card from './Card.svelte';
 }
 
 input,
-a {
+.result {
   padding-bottom: 0.5rem;
+  outline: none;
 }
 
 input,
@@ -37,17 +68,15 @@ button {
   border: none;
 }
 
-input {
-  outline: none;
-  font-size: 1.2rem;
+input:not(.result) {
+  font-size: 1rem;
   color: var(--color-neutral-very-dark-blue);
   border-bottom: 1px solid var(--color-neutral-gray);
 }
 
-a {
+.result {
   color: var(--color-primary-cyan);
   margin-block: 0.5rem;
-  width: fit-content;
   font-size: 1.2rem;
   text-decoration: none;
 }
@@ -60,5 +89,14 @@ button {
   font-size: var(--font-size-body);
   border-radius: 10px;
   padding-block: 0.5rem;
+}
+
+button:hover,
+button:focus {
+  color: var(--color-neutral-gray);
+}
+
+.disabled {
+  background-color: var(--color-primary-dark-violet);
 }
 </style>
