@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [HERE](https://www.frontendmentor.io/solutions/sveltekit-solution-with-typescript-JKHdZFbqI_)
+- Live Site URL: [HERE](https://effervescent-madeleine-53fca7.netlify.app/)
 
 ## My process
 
